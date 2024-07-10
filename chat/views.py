@@ -16,7 +16,7 @@ def sumNumbers(start_num, end_num):
 @api_view(['Post'])
 def sumNumbersView(request):
     if request.method == 'POST':
-        start_num = int(request.POST.get('start_num', 0))
-        end_num = int(request.POST.get('end_num', 0))
+        start_num = int(request.POST.get('start_num'))
+        end_num = int(request.POST.get('end_num'))
         result = sumNumbers(start_num, end_num)
         return Response({'result': result})
